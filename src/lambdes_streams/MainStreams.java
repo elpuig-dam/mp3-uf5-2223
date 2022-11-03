@@ -46,7 +46,7 @@ public class MainStreams {
 
         stream2.filter(s -> s.length() > 4 )
                 .map(String::toUpperCase)
-                .sorted((o1, o2) -> Integer.compare(o1.length(),o2.length()))
+                .sorted(Comparator.comparingInt(String::length))
                 .forEach(System.out::println);
 
 
