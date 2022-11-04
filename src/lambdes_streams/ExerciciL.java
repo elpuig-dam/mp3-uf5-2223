@@ -84,6 +84,20 @@ public class ExerciciL {
                 15 anys -> 1
 
          */
+         /*   for(Persona per : llistaPersones) {
+            if(!mapPersones.containsKey(per.getAge())) {
+                mapPersones.put(per.getAge(), 1);
+            } else {
+                mapPersones.put(per.getAge(), mapPersones.get(per.getAge())+1);
+            }
+        }*/
+        /*
+           llistaPersones.forEach(persona -> {
+               if ((!mapPersones.containsKey(persona.getAge())))
+                   mapPersones.put(persona.getAge(), 1);
+               else mapPersones.put(persona.getAge(), mapPersones.get(persona.getAge()) + 1);
+           });
+        */
 
 
         // 8 - llistat de persones DONA amb lambda (stream)
