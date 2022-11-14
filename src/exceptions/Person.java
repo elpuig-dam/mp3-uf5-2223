@@ -13,7 +13,7 @@ public class Person  {
     private LocalDate dataNaixament;
 
 
-    public Person(String nom, Genere genere, LocalDate dataNaixament) throws PersonNotBornException {
+    public Person(String nom, Genere genere, LocalDate dataNaixament) {
         this.nom = nom;
         this.genere = genere;
 
