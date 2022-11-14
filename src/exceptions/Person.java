@@ -13,10 +13,15 @@ public class Person  {
     private LocalDate dataNaixament;
 
 
-    public Person(String nom, Genere genere, LocalDate dataNaixament) {
+    public Person(String nom, Genere genere, LocalDate dataNaixament) throws PersonNotBornException {
         this.nom = nom;
         this.genere = genere;
-
+        if(dataNaixament.isAfter(LocalDate.now())) {
+            throw new PersonNotBornException(MSG_ERROR_DATA);
+        } else {
+            this.dataNaixament = dataNaixament;
+            System.out.printf("Persona amb una edat de %d anys, creada correctament", getAge());
+        }
     }
 
     public String getNom() {
@@ -34,8 +39,9 @@ public class Person  {
     public LocalDate getDataNaixament() {
         return dataNaixament;
     }
-    public void setDataNaixament(LocalDate dataNaixament) {
-        this.dataNaixament = dataNaixament;
+    public void setDataNaixament(LocalDate dataNaixament) throws PersonNotBornException {
+        if(dataNaixament.isBefore(LocalDate.now()))this.dataNaixament = dataNaixament;
+        else new PersonNotBornException(MSG_ERROR_DATA);
     }
 
     /*
